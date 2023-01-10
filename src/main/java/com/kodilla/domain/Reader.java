@@ -7,15 +7,20 @@ import lombok.Setter;
 import org.jetbrains.annotations.NotNull;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 @Entity
-@Table(name = "reader")
+@Table(name = "readers")
 public class Reader {
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "reader")
+    private List<BorrowingBooks> readersBorrowings = new ArrayList<>();
 
     @Id
     @GeneratedValue

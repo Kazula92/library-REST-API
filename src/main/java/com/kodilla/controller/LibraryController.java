@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
-@RequestMapping("/v1/tasks")
+@RequestMapping("/v1/library")
 @RequiredArgsConstructor
 public class LibraryController {
 
